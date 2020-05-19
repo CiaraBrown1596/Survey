@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".SurveyActivity">
+
+    <TextView
+        android:id="@+id/txtMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Software Quality Survey"
+        android:layout_marginTop="30dp"
+        android:textColor="@android:color/black"
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/TxtQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtMain"
+        android:layout_marginTop="77dp"
+        android:textAlignment="center"
+        android:text="How would you rate the quality of this software?"
+        android:textColor="@android:color/black"
+        android:textSize="20dp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioBtn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Very Poor"/>
+        <RadioButton
+            android:id="@+id/radioBtn2"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Poor"/>
+        <RadioButton
+            android:id="@+id/radioBtn3"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Okay"/>
+        <RadioButton
+            android:id="@+id/radioBtn4"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Good"/>
+        <RadioButton
+            android:id="@+id/radioBtn5"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Very Good"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_Confirm"
+        android:layout_below="@id/radioGroup"
+        android:background="@color/colorAccent"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirm"/>
+
+</RelativeLayout>
