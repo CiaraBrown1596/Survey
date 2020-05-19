@@ -1,13 +1,17 @@
 package com.example.survey;
 
 import android.content.Context;
+import android.view.View;
 
+import androidx.test.espresso.action.ViewActions;
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static org.junit.Assert.*;
 
 /**
@@ -23,5 +27,8 @@ public class ExampleInstrumentedTest {
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
         assertEquals("com.example.survey", appContext.getPackageName());
+    }
+    public void user_can_start_Survey(){
+        onView(withId(R.id.btnStart)).perform(ViewActions.click());
     }
 }
