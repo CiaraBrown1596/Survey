@@ -23,7 +23,13 @@ The scrum velocity metic is the measure of work completed by a development team 
 The formula for the velocity metric is straightforward. It is calculated by dividing the total story points completed by the number of Sprints in which they were completed, example if a total of 60 story points are completed in a totalof 2 Sprints (60 story points/2 Sprints) the teams veleocity would be 30 points per Sprint.
 When considering this calculation the team must discuss wheather they are willing to include partially completes stories or only fully completed stories, also the team might work on other tasks such as bug problems or support tasks during the Sprint and these take away time and effort from the Sprints user stories. Sprints should be kept at a consistant lenght as this will effect the velocity, making it inaccurate. The Velocity metric allows developers to understand how much they can get done, and plan their workload for future sprints.
 
-### 2 Unit testing and Test-Driven development
+### 2 Test-Driven development
+Test-driven development is the process that relies on the repetition of a very short development cycle. Very specific test cases are created and the code is improved so that the tests pass. 
+
+| Test Case | Test Scenario | Expected Result|Actual Result| Pass/Fail | 
+|----------:|---------------|----------------|-------------|------:|
+|1|Start Survey|User is able to begin the survey|As Expected| Pass|
+
 
 
 
