@@ -31,7 +31,44 @@ Test-driven development is the process that relies on the repetition of a very s
 |1|Start Survey|User is able to begin the survey|As Expected| Pass|
 
 
+```
+ public void user_can_start_Survey(){
+        onView(withId(R.id.btnStart)).perform(ViewActions.click());
+    }
+ ```
+ | Test Case | Test Scenario | Expected Result|Actual Result| Pass/Fail | 
+|----------:|---------------|----------------|-------------|------:|
+|2|Questions Stored|survey Questions are stored |As Expected| Pass|
+```
+ public void testCreateDB(){
+        QuizDbHelper quizDbHelper = new QuizDbHelper();
+        SQLiteDatabase db = quizDbHelper.getWritableDatabase();
+        assertTrue(db.isOpen());
+        db.close();
+
+    }
+  ````
+  
+### 3 Test coverage metric
+  
+### 4 Team version-control
+  
+### 5 Code-review checklist
+A Code review is a software quality assurance activity in which one or several people check a program mainly by viewing and reading parts of its source code. At least one of the persons must not be the code's author. A code review is used to determine the quality of the code, find defects in the code, they also are madatory in some cases such as air traffic software. The following is a check list a review should use when performing a code review. The review should ask themselves.
+#### General
+* Can I understand the code easily?
+* Does the code use meaningful Naming conventions.
+* Does the code conform to agreed indentations and formatting.
+* Is the code duplicated more than once.
+* Is the code commented effectivly.
+* Does the code validate inputs.
+#### Testing
+* Can any of the code be replaced with libraries or built-in functions
+* Do the unit tests actually test functionality
+* Are any functions too big, try to not give class or fuctions too many responsibilities.
+* Does the code meet the functional and None-functional requirments
 
 
 
-    
+
+
