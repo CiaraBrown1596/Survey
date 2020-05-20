@@ -23,9 +23,83 @@ The scrum velocity metic is the measure of work completed by a development team 
 The formula for the velocity metric is straightforward. It is calculated by dividing the total story points completed by the number of Sprints in which they were completed, example if a total of 60 story points are completed in a totalof 2 Sprints (60 story points/2 Sprints) the teams veleocity would be 30 points per Sprint.
 When considering this calculation the team must discuss wheather they are willing to include partially completes stories or only fully completed stories, also the team might work on other tasks such as bug problems or support tasks during the Sprint and these take away time and effort from the Sprints user stories. Sprints should be kept at a consistant lenght as this will effect the velocity, making it inaccurate. The Velocity metric allows developers to understand how much they can get done, and plan their workload for future sprints.
 
-### 2 Unit testing and Test-Driven development
+### 2 Test-Driven development
+Test-driven development is the process that relies on the repetition of a very short development cycle. Very specific test cases are created and the code is improved so that the tests pass. 
+
+| Test Case | Test Scenario | Expected Result|Actual Result| Pass/Fail | 
+|----------:|---------------|----------------|-------------|------:|
+|1|Start Survey|User is able to begin the survey|As Expected| Pass|
+
+
+```
+ public void user_can_start_Survey(){
+        onView(withId(R.id.btnStart)).perform(ViewActions.click());
+    }
+ ```
+ | Test Case | Test Scenario | Expected Result|Actual Result| Pass/Fail | 
+|----------:|---------------|----------------|-------------|------:|
+|2|Questions Stored|survey Questions are stored |As Expected| Pass|
+```
+ public void testCreateDB(){
+        QuizDbHelper quizDbHelper = new QuizDbHelper();
+        SQLiteDatabase db = quizDbHelper.getWritableDatabase();
+        assertTrue(db.isOpen());
+        db.close();
+
+    }
+  ````
+  
+### 3 Test coverage metric
+Code coverage means measuring how much of your code is executed during your unit tests. After running unit tests you should get a report showing what percent of the code is beening executed during the tests and which lines where executed. You can then analysis the parts of the cod ethat did not execute and modify your unit tests so that they execute in the future.
+Android Studio has a build in code coverage tool that allows the user to run unit tests and see coverage all within the IDE.
+* After setting up a new ANdroid Studio Project you will need to add the test dependencies to the build.grade file.
+```
+dependencies {
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+```
+* Then make sure to Sync the Porject with Gradle Files.
+* Next select the "Unit Tests" which is under Build Varients.
+* Click on the test folder and select Run SurveyActivityTest.
+* Then create the Unit test in src/test/java/com.example.survey/SurveyActivityTest.java
+* Run the tests
+* Analysis results and make changes where needed.
+<img src="Screenshot.png"
+ alt="COverage Metric Image"
+ style="Float: left; margin-right:10px;"/>
+
+  
+### 4 Team version-control
+Version control is a way of making sure you know which is the current iteration of a project.
+Version control is important because then you know everyone is working from the same version of a porject.
+The Gitflow Workflow defines a strict branching model designed around the project release. This provides a robust framework for managing larger projects. Instead of a single master branch, this workflow uses branches to record the history of the project.
+When we look at version-control and the creation and merging of branches I to followed these guidlines;
+* The use of descriptive commit messages so when examining the change I would be able to understand clearly the purpose of the change. This is also useful when looking for specific commits as you can search through the commit messages.
+* Making each commit have a single purpose, this makes it easier to locate features when fixing bugs
+#### The WorkFlow
+* git pull request
+* Any Updates/Additions
+* Make necessary changes to code
+* git commit
+* git push
+  
+### 5 Code-review checklist
+A Code review is a software quality assurance activity in which one or several people check a program mainly by viewing and reading parts of its source code. At least one of the persons must not be the code's author. A code review is used to determine the quality of the code, find defects in the code, they also are madatory in some cases such as air traffic software. The following is a check list a review should use when performing a code review. The review should ask themselves.
+#### General
+* Can I understand the code easily?
+* Does the code use meaningful Naming conventions.
+* Does the code conform to agreed indentations and formatting.
+* Is the code duplicated more than once.
+* Is the code commented effectivly.
+* Does the code validate inputs.
+#### Testing
+* Can any of the code be replaced with libraries or built-in functions
+* Do the unit tests actually test functionality
+* Are any functions too big, try to not give class or fuctions too many responsibilities.
+* Does the code meet the functional and None-functional requirments
 
 
 
 
-    
+
