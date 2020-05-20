@@ -50,6 +50,25 @@ Test-driven development is the process that relies on the repetition of a very s
   ````
   
 ### 3 Test coverage metric
+Code coverage means measuring how much of your code is executed during your unit tests. After running unit tests you should get a report showing what percent of the code is beening executed during the tests and which lines where executed. You can then analysis the parts of the cod ethat did not execute and modify your unit tests so that they execute in the future.
+Android Studio has a build in code coverage tool that allows the user to run unit tests and see coverage all within the IDE.
+* After setting up a new ANdroid Studio Project you will need to add the test dependencies to the build.grade file.
+```
+dependencies {
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+```
+* Then make sure to Sync the Porject with Gradle Files.
+* Next select the "Unit Tests" which is under Build Varients.
+* Click on the test folder and select Run SurveyActivityTest.
+* Then create the Unit test in src/test/java/com.example.survey/SurveyActivityTest.java
+* Run the tests
+* Analysis results and make changes where needed.
+<img src="Screenshot.png"
+ alt="COverage Metric Image"
+ style="Float: left; margin-right:10px;"/>
+
   
 ### 4 Team version-control
 Version control is a way of making sure you know which is the current iteration of a project.
