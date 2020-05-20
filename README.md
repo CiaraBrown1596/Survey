@@ -48,6 +48,22 @@ Test-driven development is the process that relies on the repetition of a very s
 
     }
   ````
+| Test Case | Test Scenario | Expected Result|Actual Result| Pass/Fail | 
+|----------:|---------------|----------------|-------------|------:|
+|3|Calculate Average|Average is calculated |As Expected| Pass|
+```
+public static class AverageTest extends TestCase {
+        public void testOneAverage() {
+            double avg1 = AverageTest.avg(new double[]{5});
+            assertEquals(5, avg1, 0.01);
+        }
+
+        private static double avg(double[] doubles) {
+            return 0;
+        }
+    }
+```
+Visit https://github.com/CiaraBrown1596/Survey/blob/master/app/src/androidTest/java/com/example/survey/ExampleInstrumentedTest.java
   
 ### 3 Test coverage metric
 Code coverage means measuring how much of your code is executed during your unit tests. After running unit tests you should get a report showing what percent of the code is beening executed during the tests and which lines where executed. You can then analysis the parts of the cod ethat did not execute and modify your unit tests so that they execute in the future.
