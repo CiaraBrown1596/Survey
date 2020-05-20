@@ -1,7 +1,7 @@
 package com.example.survey;
 
 import android.content.Context;
-import android.view.View;
+import android.database.sqlite.SQLiteDatabase;
 
 import androidx.test.espresso.action.ViewActions;
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -28,7 +28,16 @@ public class ExampleInstrumentedTest {
 
         assertEquals("com.example.survey", appContext.getPackageName());
     }
+    //test to see if start button works correctly.
     public void user_can_start_Survey(){
         onView(withId(R.id.btnStart)).perform(ViewActions.click());
+    }
+
+    //test for database creation.
+    public void testCreateDB(){
+        SurveyDbHelper surveyDbHelper = new SurveyDbHelper();
+        SQLiteDatabase db = surveyDbHelper.getWritableDatabase();
+        assertTrue(db.isOpen());
+        db.close();
     }
 }

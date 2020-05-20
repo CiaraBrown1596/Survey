@@ -1,4 +1,8 @@
 package com.example.survey;
+
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+
 // this class contains the information regarding the survey questions
 public class Question {
     private String question;
@@ -22,6 +26,18 @@ public class Question {
         this.answer = answer;
     }
 
+    public Question(String s, String s1, String s2, String s3, String s4, String s5) {
+    }
+
+    public Question(String question, String s, String s1, String s2, String s3, String s4, int radioGroup) {
+    }
+
+    public Question(String s, String s1, String s2, String s3, String s4, String s5, RadioButton mySelectedRadioButton) {
+    }
+
+    public Question(String s, String s1, String s2, String s3, String s4, String s5, RadioGroup mySelectedRadioButton) {
+    }
+
     public String getQuestion() {
         return question;
     }
@@ -31,20 +47,20 @@ public class Question {
         return this;
     }
 
-    public int getVeryPoor() {
+    public String getVeryPoor() {
         return veryPoor;
     }
 
-    public Question setVeryPoor(int veryPoor) {
+    public Question setVeryPoor(String veryPoor) {
         this.veryPoor = veryPoor;
         return this;
     }
 
-    public int getOkay() {
+    public String getOkay() {
         return okay;
     }
 
-    public Question setOkay(int okay) {
+    public Question setOkay(String okay) {
         this.okay = okay;
         return this;
     }
@@ -76,11 +92,11 @@ public class Question {
         return this;
     }
 
-    public int getPoor() {
+    public String getPoor() {
         return poor;
     }
 
-    public Question setPoor(int poor) {
+    public Question setPoor(String poor) {
         this.poor = poor;
         return this;
     }
