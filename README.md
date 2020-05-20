@@ -52,6 +52,18 @@ Test-driven development is the process that relies on the repetition of a very s
 ### 3 Test coverage metric
   
 ### 4 Team version-control
+Version control is a way of making sure you know which is the current iteration of a project.
+Version control is important because then you know everyone is working from the same version of a porject.
+The Gitflow Workflow defines a strict branching model designed around the project release. This provides a robust framework for managing larger projects. Instead of a single master branch, this workflow uses branches to record the history of the project.
+When we look at version-control and the creation and merging of branches I to followed these guidlines;
+* The use of descriptive commit messages so when examining the change I would be able to understand clearly the purpose of the change. This is also useful when looking for specific commits as you can search through the commit messages.
+* Making each commit have a single purpose, this makes it easier to locate features when fixing bugs
+#### The WorkFlow
+* git pull request
+* Any Updates/Additions
+* Make necessary changes to code
+* git commit
+* git push
   
 ### 5 Code-review checklist
 A Code review is a software quality assurance activity in which one or several people check a program mainly by viewing and reading parts of its source code. At least one of the persons must not be the code's author. A code review is used to determine the quality of the code, find defects in the code, they also are madatory in some cases such as air traffic software. The following is a check list a review should use when performing a code review. The review should ask themselves.
