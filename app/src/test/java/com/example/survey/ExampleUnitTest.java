@@ -19,7 +19,6 @@ public class ExampleUnitTest {
 
     public static class AverageTest extends TestCase {
         public void testOneAverage() {
-            // we expect the average of one element (with value 5) to be 5, the 0.01 is a delta because of imprecise floating-point operations
             double avg1 = AverageTest.avg(new double[]{5});
             assertEquals(5, avg1, 0.01);
         }
@@ -29,5 +28,19 @@ public class ExampleUnitTest {
         }
     }
 
+
+    public static class StandardDeviationTest extends TestCase{
+        public void testStandardDeviation(){
+            double stdDev1 = StandardDeviationTest.stdDev(new double[]{5});
+            assertArrayEquals(5,stdDev1,2);
+        }
+
+        private static double stdDev(double[] doubles) {
+            return 0;
+        }
+
+        private void assertArrayEquals(int i, double stdDev1, int i1) {
+        }
+    }
 
 }

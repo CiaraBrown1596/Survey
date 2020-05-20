@@ -125,15 +125,15 @@ public class SurveyActivity extends AppCompatActivity {
         }
         return maxValue;
     }
-    public static int getMinValue(int[] AnswerArray){
-        int minValue = AnswerArray[0];
-        for(int i=1;i<AnswerArray.length;i++){
-            if(AnswerArray[i] < minValue){
-                minValue = AnswerArray[i];
+    public static int getMinValue(double[] AnswerArray){
+        double minValue = AnswerArray[0];
+        for(double i=1;i<AnswerArray.length;i++){
+            if(AnswerArray[(int) i] < minValue){
+                minValue = AnswerArray[(int) i];
             }
 
     // calculate the standard deviation
-    public static double calculateStandardDev(double AnswerArray[])
+    public static double calculateStandardDev(AnswerArray)
     {
         double sum = 0.0, standardDeviation = 0.0;
         int length = AnswerArray.length;
