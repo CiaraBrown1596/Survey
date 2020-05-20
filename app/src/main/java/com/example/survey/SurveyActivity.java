@@ -26,6 +26,7 @@ public class SurveyActivity extends AppCompatActivity {
     private RadioButton rb1;
     private RadioButton rb2;
     private RadioButton rb3;
+    private double answers;
     private RadioButton rb4;
     private RadioButton rb5;
     private Button buttonConfirmNext;
@@ -62,7 +63,7 @@ public class SurveyActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (!answered) {
-                    if (rb1.isChecked() || rb2.isChecked() || rb3.isChecked()||rb4.isChecked()||rb5.isChecked()) {
+                    if (rb1.isChecked() || rb2.isChecked() || rb3.isChecked() || rb4.isChecked() || rb5.isChecked()) {
 
                     } else {
                         Toast.makeText(SurveyActivity.this, "Please select an answer", Toast.LENGTH_SHORT).show();
@@ -73,6 +74,7 @@ public class SurveyActivity extends AppCompatActivity {
             }
         });
     }
+
     //moves the user onto the next question
     private void showNextQuestion() {
         rb1.setTextColor(textColorDefaultRb);
@@ -95,15 +97,16 @@ public class SurveyActivity extends AppCompatActivity {
             finishSurvey();
         }
     }
+
     //finishes the survey
     private void finishSurvey() {
         finish();
     }
 
     // calculates the average score from the list on answers in the survey
-    private double calculateAverage(List <Integer> answers) {
+    private double calculateAverage(List<Integer> answers) {
         Integer average = 0;
-        if(!answers.isEmpty()) {
+        if (!answers.isEmpty()) {
             for (Integer mark : answers) {
                 average += mark;
             }
@@ -112,7 +115,42 @@ public class SurveyActivity extends AppCompatActivity {
         return average;
     }
 
+    //calcualte the max and min values
+    public static int getMaxValue(int[] AnswerArray){
+        int maxValue = AnswerArray[0];
+        for(int i=1;i < AnswerArray.length;i++){
+            if(AnswerArray[i] > maxValue){
+                maxValue = AnswerArray[i];
+            }
+        }
+        return maxValue;
+    }
+    public static int getMinValue(int[] AnswerArray){
+        int minValue = AnswerArray[0];
+        for(int i=1;i<AnswerArray.length;i++){
+            if(AnswerArray[i] < minValue){
+                minValue = AnswerArray[i];
+            }
+
     // calculate the standard deviation
+    public static double calculateStandardDev(double AnswerArray[])
+    {
+        double sum = 0.0, standardDeviation = 0.0;
+        int length = AnswerArray.length;
+
+        for(double num : AnswerArray) {
+            sum += num;
+        }
+
+        double mean = sum/length;
+
+        for(double num: AnswerArray) {
+            standardDeviation += Math.pow(num - mean, 2);
+        }
+
+        return (int) Math.sqrt(standardDeviation/length);
+    }
+}
 
 
 
